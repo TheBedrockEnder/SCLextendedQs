@@ -1,6 +1,9 @@
 import random
+HighScore = open("musicgamehighscores.txt", "r")
 
 print("Welcome to the music game!")
+
+name = input("Enter your name: ")
 
 Music = [["Aritst A", "Song A", "Song A 2"],["Artist B", "Song B"]]
 
