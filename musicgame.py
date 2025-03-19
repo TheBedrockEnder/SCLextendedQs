@@ -1,31 +1,6 @@
 import random
-
-def load_high_scores(filename="musicgamehighscores.txt"):
-    high_scores = []
-    try:
-        with open(filename, "r") as file:
-            for line in file:
-                name, points = line.strip().split()
-                high_scores.append({"name": name, "points": int(points)})
-    except FileNotFoundError:
-        pass
-    return high_scores
-
-def display_high_scores(high_scores):
-    print("High Scores:")
-    print("{:<10} {:<10}".format("Name", "Points"))
-    for score in high_scores:
-        print("{:<10} {:<10}".format(score['name'], score['points']))
-
-def update_high_scores(high_scores, name, points):
-    high_scores.append({"name": name, "points": points})
-    high_scores.sort(key=lambda x: x["points"], reverse=True)
-    return high_scores[:5]
-
-def update_high_scores(high_scores, name, points):
-    high_scores.append({"name": name, "points": points})
-    high_scores.sort(key=lambda x: x["points"], reverse=True)
-    return high_scores[:5]
+HighScore = open("musicgamehighscores.txt", "r+")
+HighScoreRead = HighScore.read()
 
 print("Welcome to the music game!")
 
@@ -59,6 +34,5 @@ while Guess_Number < 2:
 
 print ("Game over! You got ", points, "point(s)")
 
-high_scores = update_high_scores(high_scores, name, points)
-display_high_scores(high_scores)
-save_high_scores(high_scores)
+HighScore.write(name + " " + str(points) + "\n")
+print("High Scores = \n", HighScoreRead)
