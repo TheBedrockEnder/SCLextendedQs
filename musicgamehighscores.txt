@@ -1,4 +1,7 @@
-Martin 3
-Martin 6
-Martin 3
-Martin 9
+[
+    {"name": "Player1", "points": 10},
+    {"name": "Player2", "points": 8},
+    {"name": "Player3", "points": 6},
+    {"name": "Player4", "points": 4},
+    {"name": "Player5", "points": 2}
+]
